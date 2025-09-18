@@ -58,10 +58,19 @@ OV7670 模块的图像数据存储，等待下一次VSHNC 信号到来，我们�
 
 由于Copilot提供的PIN连接图无法和ESP32 S3的板子对应上，这里做了一些修改
 
-1，VCC/GND/OE pin直接连接到esp32的对应供电pin上
+PIN定义的更新如下：
+V3.3 链接ESP32 3V3
+GND和OE 连接 ESP32 GND
+D0-D7 直接 GPIO0-GPIO7
 
-D0-D7的数字信号线选择
+SDA：GPIO8
+SCL：GPIO9
 
+#define RCLK_GPIO   11
+#define WEN_GPIO    15
+#define WRST_GPIO   14
+#define RRST_GPIO   13
+#define VSYNC_GPIO  10  
 
 
 
